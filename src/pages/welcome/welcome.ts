@@ -30,4 +30,9 @@ export class WelcomePage {
   {
     this.navCtrl.push('LoginPage');
   }
+
+  Leaderboard()
+  {
+    this.navCtrl.push('LeaderboardPage');
+  }
 }
