@@ -35,4 +35,9 @@ export class WelcomePage {
   {
     this.navCtrl.push('LeaderboardPage');
   }
+
+  Status()
+  {
+    this.navCtrl.push('StatusPage');
+  }
 }
