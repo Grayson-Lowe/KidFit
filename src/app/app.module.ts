@@ -4,7 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { WelcomePage } from '../pages/welcome/welcome';
+import { LoginPage } from '../pages/login/login';
 import {HttpClientModule} from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
@@ -14,7 +14,7 @@ import { AES256 } from '@ionic-native/aes-256';
 @NgModule({
   declarations: [
     MyApp,
-    WelcomePage
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +25,7 @@ import { AES256 } from '@ionic-native/aes-256';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    WelcomePage
+    LoginPage
   ],
   providers: [
     StatusBar,
