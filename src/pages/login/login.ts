@@ -95,7 +95,7 @@ export class LoginPage {
                    this.navCtrl.push('InvalidLoginPage',{error: "acess denied"});
                   }
                 else if(data['login']=="success"){
-                  this.navCtrl.push('Status');
+                  this.navCtrl.push('StatusPage');
                   console.log(data);
                 }
               })
@@ -124,7 +124,7 @@ export class LoginPage {
             this.navCtrl.push('LoginPage');
               }
             else if(data['login']=="success"){
-              this.navCtrl.push('Status');
+              this.navCtrl.push('StatusPage');
               console.log(data);
             }
           })
@@ -229,7 +229,7 @@ export class LoginPage {
             }
           else if(data['login']=="success"){
             this.storage.set('nickname',data['username'])
-            this.navCtrl.push('Status');
+            this.navCtrl.push('StatusPage');
             console.log(data);
           }
         })
