@@ -8,6 +8,8 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import {HttpClientModule} from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { AES256 } from '@ionic-native/aes-256';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     StatusBar,
     SplashScreen,
     InAppBrowser,
+    AES256,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
