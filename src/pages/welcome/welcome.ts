@@ -19,7 +19,6 @@ export class WelcomePage {
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
     }
-
     ionViewDidLoad() {
         this.navCtrl.swipeBackEnabled = true;
         console.log('ionViewDidLoad WelcomePage');
@@ -27,16 +26,13 @@ export class WelcomePage {
 
     openNewGamePage() {
         this.navCtrl.push(NewGamePage);
-        this.navCtrl.setRoot(NewGamePage);
     }
 
     openCurrentGamePage() {
         this.navCtrl.push(CurrentGamePage);
-        this.navCtrl.setRoot(CurrentGamePage);
     }
 
     openAccountPage() {
         this.navCtrl.push(AccountPage);
-        this.navCtrl.setRoot(AccountPage);
     }
 }

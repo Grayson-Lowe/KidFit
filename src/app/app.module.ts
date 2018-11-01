@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { AES256 } from '@ionic-native/aes-256';
-
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -29,6 +29,20 @@ import { AES256 } from '@ionic-native/aes-256';
     HttpClientModule,
     IonicModule.forRoot(MyApp, { swipeBackEnabled: true }),
     IonicStorageModule.forRoot(),
+    NgCircleProgressModule.forRoot({
+      // // set defaults here
+      // radius: 100,
+      // outerStrokeWidth: 16,
+      // innerStrokeWidth: 8,
+      // // outerStrokeColor: "#78C000",
+      // // innerStrokeColor: "#C7E596",
+      // animationDuration: 300,
+      // subtitle: "Steps",
+      // subtitleColor: "#f4f4f4",
+      // unitsColor: "#f4f4f4",
+      // unitsFontSize: "0.5em",
+      // subtitleFontSize: "0.7em"
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

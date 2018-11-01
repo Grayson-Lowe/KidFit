@@ -1,3 +1,90 @@
-page-current-game {
+page-current-game {}
 
+.rank,
+.progress,
+#activity1,
+#activity2,
+#activity3 {
+    text-align: center;
+    font-size: 2.0em;
+}
+
+.leaderboard {
+    margin-top: 0px;
+    background-color: #f4f4f4;
+    border-radius: 8px !important;
+}
+
+.standing {
+    text-align: center;
+    padding: 2%;
+}
+
+.player {
+    text-align: center;
+    padding: 2%;
+}
+
+#p1 {
+    background-color: rgb(3.9%, 93.3%, 65.6%);
+}
+
+#p2 {
+    background-color: rgb(3.9%, 93.3%, 65.6%);
+    margin-right: 10%;
+}
+
+#p3 {
+    background-color: rgb(3.9%, 93.3%, 65.6%);
+    margin-right: 20%;
+}
+
+#p4 {
+    background-color: rgb(3.9%, 93.3%, 65.6%);
+    margin-right: 30%;
+}
+
+.actv-progress {
+    background-color: #f4f4f4;
+    border-radius: 8px !important;
+}
+
+// .actv-list {
+//     background-color: #f4f4f4;
+// }
+// .activity {
+// }
+#activity1 {
+    background-color: rgb(3.9%, 93.3%, 65.6%);
+    margin-bottom: 1%;
+    border-radius: 8px !important;
+    text-align: center;
+}
+
+#activity2 {
+    background-color: rgb(3.9%, 93.3%, 65.6%);
+    margin-bottom: 1%;
+    border-radius: 8px !important;
+}
+
+#activity3 {
+    background-color: rgb(3.9%, 93.3%, 65.6%);
+    margin-bottom: 1%;
+    border-radius: 8px !important;
+}
+
+.atv-avatar {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100px !important; //any size
+    max-height: 100px !important;
+}
+
+.status {
+    padding: 1%;
+    // margin-left: auto;
+    text-align: center;
+    margin-right: auto;
 }

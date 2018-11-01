@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AccountPage } from '../account/account';
+import { CurrentGamePage } from '../current-game/current-game';
 
 /**
  * Generated class for the NewGamePage page.
@@ -25,7 +26,9 @@ export class NewGamePage {
 
   openAccountPage() {
     this.navCtrl.push(AccountPage);
-    this.navCtrl.setRoot(AccountPage);
+  }
+  openCurrentGamePage() {
+    this.navCtrl.push(CurrentGamePage);
   }
   expand() {
     var acc = document.getElementsByClassName("accordion");

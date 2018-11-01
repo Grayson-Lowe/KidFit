@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AccountPage } from '../account/account';
 
 /**
  * Generated class for the CurrentGamePage page.
@@ -19,6 +20,10 @@ export class CurrentGamePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CurrentGamePage');
+  }
+  openAccountPage() {
+    this.navCtrl.push(AccountPage);
+    // this.navCtrl.setRoot(AccountPage);
   }
 
 }

@@ -6,13 +6,122 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>current-game</ion-title>
-  </ion-navbar>
-
+    <ion-navbar>
+        <ion-title text-center>Current Game</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only persistent='true' isActive="false" (click)="openAccountPage()">
+                <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
+    <ion-list>
+        <button class="accordion" ion-button full>Leaderboard</button>
+        <ion-item class="leaderboard" style="margin-bottom: 5%;">
+            <ion-grid>
+                <ion-row align-items: center>
+                    <ion-col class="rank">
+                        Rank
+                        <ion-row align-items: center>
+                            <ion-col>
+                                <ion-row class="standing">1st</ion-row>
+                                <ion-row class="standing">2nd</ion-row>
+                                <ion-row class="standing">3rd</ion-row>
+                                <ion-row class="standing">4th</ion-row>
+                            </ion-col>
+                            <ion-col col-6>
+                                <ion-row class="player">Turner</ion-row>
+                                <ion-row class="player">Spencer</ion-row>
+                                <ion-row class="player">Grayson</ion-row>
+                                <ion-row class="player">Jerry</ion-row>
+                            </ion-col>
+                        </ion-row>
+                    </ion-col>
 
+                    <ion-col col-8 class="progress">
+                        Completion
+                        <ion-row align-items: center>
+                            <ion-col>
+                                <ion-row>
+                                    <button ion-button full id="p1"></button>
+                                </ion-row>
+                                <ion-row>
+                                    <button ion-button full id="p2"></button>
+                                </ion-row>
+                                <ion-row>
+                                    <button ion-button full id="p3"></button>
+                                </ion-row>
+                                <ion-row>
+                                    <button ion-button full id="p4"></button>
+                                </ion-row>
+                            </ion-col>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+
+
+        <button class="accordion" ion-button full>Activity Progress</button>
+        <ion-item class="actv-progress">
+            <ion-grid>
+                <ion-row align-items:center id="activity1">
+                    Status
+                    <ion-col style="margin: auto;" class="actv-icon">
+                        <ion-avatar item-start class="atv-avatar">
+                            <img src="assets/imgs/run.png">
+                        </ion-avatar>
+                    </ion-col>
+                    <ion-col>
+                        <ion-row class="status">00:22:10</ion-row>
+
+                        <ion-row class="status">
+                            <circle-progress [percent]="90" [radius]="50" [subtitle]="Run" [title]="Run" [outerStrokeWidth]="16" [innerStrokeWidth]="0" [outerStrokeColor]="'#f4f4f4'" [animation]="true" [animationDuration]="3000"></circle-progress>
+                        </ion-row>
+
+                        <ion-row class="status">900/1000 ft</ion-row>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row align-items:center id="activity2">
+                    Status
+                    <ion-col style="margin: auto;" class="actv-icon">
+                        <ion-avatar item-start class="atv-avatar">
+                            <img src="assets/imgs/stairs.png">
+                        </ion-avatar>
+                    </ion-col>
+                    <ion-col>
+                        <ion-row class="status">01:24:56</ion-row>
+
+                        <ion-row class="status">
+                            <circle-progress [percent]="25" [radius]="50" [subtitle]="Run" [title]="Run" [outerStrokeWidth]="16" [innerStrokeWidth]="0" [outerStrokeColor]="'#f4f4f4'" [animation]="true" [animationDuration]="3000"></circle-progress>
+                        </ion-row>
+
+                        <ion-row class="status">25/100 stairs</ion-row>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row align-items:center id="activity3">
+                    Status
+                    <ion-col style="margin: auto;" class="actv-icon">
+                        <ion-avatar item-start class="atv-avatar">
+                            <img src="assets/imgs/swim.png">
+                        </ion-avatar>
+                    </ion-col>
+                    <ion-col>
+                        <ion-row class="status">01:54:48</ion-row>
+
+                        <ion-row class="status">
+                            <circle-progress [percent]="60" [radius]="50" [subtitle]="Run" [title]="Run" [outerStrokeWidth]="16" [innerStrokeWidth]="0" [outerStrokeColor]="'#f4f4f4'" [animation]="true" [animationDuration]="3000"></circle-progress>
+                        </ion-row>
+
+                        <ion-row class="status">600/1000 ft</ion-row>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
 </ion-content>

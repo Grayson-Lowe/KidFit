@@ -6,11 +6,9 @@
 -->
 <ion-header>
     <ion-navbar>
-        <ion-title>Start A New Game</ion-title>
+        <ion-title text-center>Start A New Game</ion-title>
 
         <ion-buttons right>
-            <!-- <ion-nav-back-button>Back
-            </ion-nav-back-button> -->
             <button ion-button icon-only persistent='true' isActive="false" (click)="openAccountPage()">
               <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
             </button>
@@ -113,5 +111,6 @@
         </ion-list>
 
     </ion-list>
+    <button ion-button full class="start-btn" (click)="openCurrentGamePage()">Start A New Game</button>
     <!-- </ion-content> -->
 </ion-content>
