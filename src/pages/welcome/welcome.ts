@@ -17,7 +17,11 @@ import { AccountPage } from '../account/account';
 })
 export class WelcomePage {
 
+    userdata = null;
+
     constructor(public navCtrl: NavController, public navParams: NavParams) {
+        this.userdata = this.navParams.get('data')
+        console.log("My Data",this.userdata)
     }
 
     ionViewDidLoad() {
