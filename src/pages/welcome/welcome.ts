@@ -16,8 +16,10 @@ import { AccountPage } from '../account/account';
     templateUrl: 'welcome.html',
 })
 export class WelcomePage {
-
+    userdata = null;
     constructor(public navCtrl: NavController, public navParams: NavParams) {
+        this.userdata = this.navParams.get('data')
+        console.log("My User Data: ",this.userdata)
     }
     ionViewDidLoad() {
         this.navCtrl.swipeBackEnabled = true;
