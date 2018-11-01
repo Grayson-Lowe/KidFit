@@ -1,0 +1,81 @@
+page-new-game {}
+
+.account-icon {
+    float: right;
+}
+
+#run-button {
+    margin-top: 1%;
+    background: #04ACE3;
+    padding: 1%;
+    color: #f4f4f4;
+    .atv-header {
+        font-size: 2.0em;
+    }
+}
+
+#walk-button {
+    background: #7AC74F;
+    padding: 1%;
+    color: #f4f4f4;
+    .atv-header {
+        font-size: 2.0em;
+    }
+}
+
+#climb-button {
+    background: #F9DC5C;
+    padding: 1%;
+    color: #f4f4f4;
+    .atv-header {
+        font-size: 2.0em;
+    }
+}
+
+#bike-button {
+    background: #FF4C50;
+    padding: 1%;
+    color: #f4f4f4;
+    .atv-header {
+        font-size: 2.0em;
+    }
+}
+
+#swim-button {
+    background: #118AB2;
+    padding: 1%;
+    color: #f4f4f4;
+    .atv-header {
+        font-size: 2.0em;
+    }
+}
+
+.accordion {
+    background-color: #eee;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+.active,
+.accordion:hover {
+    background-color: #ccc;
+}
+
+
+/* Style the accordion panel. Note: hidden by default */
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: block;
+    overflow: hidden;
+}
