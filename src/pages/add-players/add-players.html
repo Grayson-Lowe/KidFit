@@ -1,0 +1,42 @@
+<!--
+  Generated template for the HotPotatoGamePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>New Game</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <br/>
+  Hi {{name}}
+  <br/>
+  <br/>
+  
+  Collect maximum active time to escape the tunnel. Invite friends to play along.
+  <br/>
+  <br>
+  <ion-list>  <!-- added to display lines beneath email field-->
+  <ion-item>
+    <ion-input type="email" name="email" [(ngModel)]="data.frndemail" placeholder="Invite a friend"></ion-input>
+   <button ion-button item-right (click)="addFriend()"  >Add</button>
+  </ion-item>
+</ion-list> 
+<br/>
+<br/>
+
+<ion-item no-lines *ngIf="playersList.length>0" >Players
+<ion-list >
+    <ion-item text-wrap ><p>{{name}}</p></ion-item>
+  <ion-item text-wrap *ngFor="let player of playersList;let i = index "><p>{{player}}</p>
+    <ion-icon *ngIf="canDeletePlayer" item-right (click)="deletePlayer(i)" name = "close" ></ion-icon>
+  </ion-item>
+</ion-list>
+</ion-item>
+</ion-content>
