@@ -16,8 +16,9 @@ import { NewGamePage } from '../new-game/new-game';
 })
 export class CurrentGamePage {
 
+  username: string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.navParams.get('data');
+    this.username = navParams.get('data');
   }
 
   ionViewDidLoad() {
