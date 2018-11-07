@@ -17,6 +17,7 @@ import { NewGamePage } from '../new-game/new-game';
 export class CurrentGamePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.navParams.get('data');
   }
 
   ionViewDidLoad() {
