@@ -24,6 +24,7 @@ export class CurrentGamePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CurrentGamePage');
   }
+
   openAccountPage() {
     this.navCtrl.push(AccountPage);
     // this.navCtrl.setRoot(AccountPage);

@@ -75,7 +75,7 @@ export class NewGamePage {
   {
     var link = 'https://kidsteam.boisestate.edu/kidfit/get_gameID.php?gameName=fitRace';
     link=link.concat('&metric=')
-    link=link.concat('activityTime')
+    link=link.concat('steps')
     return new Promise(resolve => {
       this.httpClient.get(link)
           .subscribe(data => {
