@@ -17,8 +17,11 @@ import { AccountPage } from '../account/account';
 })
 export class WelcomePage {
     userdata = null;
+    userName = "";
+
     constructor(public navCtrl: NavController, public navParams: NavParams) {
         this.userdata = this.navParams.get('data')
+        this.userName = this.userdata['username']
         console.log("My User Data: ",this.userdata)
     }
     ionViewDidLoad() {
@@ -27,7 +30,7 @@ export class WelcomePage {
     }
 
     openNewGamePage() {
-        this.navCtrl.push(NewGamePage);
+        this.navCtrl.push(NewGamePage,{name:this.userName});
     }
 
     openCurrentGamePage() {

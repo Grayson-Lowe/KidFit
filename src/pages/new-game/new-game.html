@@ -24,36 +24,25 @@
         <button class="accordion" ion-button full (click)="expand()">Invite Friends</button>
         <ion-list style="padding-bottom:2%">
             <ion-item class="inv" style="display: inline-block">
-                <ion-label>Invite Friend: </ion-label>
-                <!-- <ion-input type={{type}} name="password" [(ngModel)]="data.password" style="color:white"></ion-input> -->
-                <button ion-button clear item-end (click)='showHide()' style="height:32px;">
+                <ion-input type="email" name="email" [(ngModel)]="data.frndemail" placeholder="Invite a friend"></ion-input>                <!-- <ion-input type={{type}} name="password" [(ngModel)]="data.password" style="color:white"></ion-input> -->
+                <button ion-button clear item-end (click)='addFriend()' style="height:32px;">
         <ion-icon name="add" style="font-size:32px;"></ion-icon>
       </button>
             </ion-item>
-            <ion-item class="inv">
-                <ion-label>Invite Friend: </ion-label>
-                <!-- <ion-input type={{type}} name="password" [(ngModel)]="data.password" style="color:white"></ion-input> -->
-                <button ion-button clear item-end (click)='showHide()' style="height:32px;">
-        <ion-icon name="add" style="font-size:32px;"></ion-icon>
-      </button>
-            </ion-item>
-            <ion-item class="inv">
-                <ion-label>Invite Friend: </ion-label>
-                <!-- <ion-input type={{type}} name="password" [(ngModel)]="data.password" style="color:white"></ion-input> -->
-                <button ion-button clear item-end (click)='showHide()' style="height:32px;">
-                  <ion-icon name="add" style="font-size:32px;"></ion-icon>
-                </button>
-            </ion-item>
-            <ion-item class="inv">
-                <ion-label>Invite Friend: </ion-label>
-                <!-- <ion-input type={{type}} name="password" [(ngModel)]="data.password" style="color:white"></ion-input> -->
-                <button ion-button clear item-end (click)='showHide()' style="height:32px;">
-                      <ion-icon name="add" style="font-size:32px;"></ion-icon>
-                    </button>
-            </ion-item>
+           
         </ion-list>
 
-
+        <button class="accordion" ion-button full (click)="expand()">Players</button>
+        <ion-list style="padding-bottom:2%">
+            <ion-item no-lines *ngIf="playersList.length>0" >
+                <ion-list >
+                    <ion-item text-wrap ><p>{{name}}</p></ion-item>
+                  <ion-item text-wrap *ngFor="let player of playersList;let i = index "><p>{{player}}</p>
+                    <ion-icon *ngIf="canDeletePlayer" item-right (click)="deletePlayer(i)" name = "close" ></ion-icon>
+                  </ion-item>
+                </ion-list>
+                </ion-item>
+        </ion-list>
 
         <ion-list radio-group>
             <button class="accordion" ion-button full>Select Games</button>
