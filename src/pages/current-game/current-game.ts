@@ -72,7 +72,7 @@ export class CurrentGamePage {
       { this.zone.run(()=> this.refreshView());}
     });
 
-    console.log('ionViewWillEnter GameInstancePage');
+    console.log('ionViewWillEnter CurrentGamePage');
     this.zone.run(()=> this.refreshView());
   }
 
@@ -227,47 +227,6 @@ export class CurrentGamePage {
     })
   }
 
-  addFriend()
-  {
-    if(this.data.frndemail.length ==0 )
-      { 
-        // TODO add check for valid email
-        this.navCtrl.push('InvalidLoginPage', {error:"no email"});
-
-      }
-      else{
-        this.addPlayers().then(addPlayerData=>{
-          if(addPlayerData['error'])
-          {
-            this.navCtrl.push('InvalidLoginPage', {error:addPlayerData['error']});  
-          }
-          else{
-            this.data.frndemail="";
-            this.zone.run(()=> this.refreshView());            
-          }
-        })
-      }
-  }
-
-  addPlayers()
-  {
-    var link = 'https://kidsteam.boisestate.edu/kidfit/addPlayerToGameInstance.php?gameInstanceID=';
-    link= link.concat(this.gameInstanceID);
-    link= link.concat('&self=');
-    link= link.concat(this.username);
-    link=link.concat('&friend=');
-    link = link.concat(this.data.frndemail);
-    link = link.concat('&accessToken=')
-    link= link.concat(this.accesstoken);  
-    return new Promise(resolve => {
-      this.httpClient.get(link)
-          .subscribe(data => {
-            resolve(data);
-          }, error => {
-            resolve(error);
-          })
-    })  
-  }
 
   // TODO  ---> DONE 
 StartGame()

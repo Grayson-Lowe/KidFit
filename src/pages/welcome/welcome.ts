@@ -64,10 +64,6 @@ export class WelcomePage {
         this.navCtrl.push(NewGamePage,{name:this.userName});
     }
 
-    openCurrentGamePage() {
-        this.navCtrl.push(CurrentGamePage);
-    }
-
     openAccountPage() {
         this.navCtrl.push(AccountPage);
     }
