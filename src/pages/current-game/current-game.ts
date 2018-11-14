@@ -44,6 +44,7 @@ export class CurrentGamePage {
   gameOver=false;
   gameID=null;
   gameWonOrLost:null;
+  mysteps=0;
   currentActivityTime=0;
   startActivityTime =0;
   endingActivityTime=0;
@@ -361,6 +362,8 @@ refreshView()
               }  
               this.getActiveGameDetail(this.gameInstanceID).then(activeGameData=>
               {
+                console.log("My Active Game: ",activeGameData)
+                this.mysteps = activeGameData['currentSteps']-activeGameData['startSteps']
                   
                 if(activeGameData['error'])
                   {
