@@ -18,7 +18,7 @@
 
 
 <ion-content padding>
-<button ion-button full class="quit-btn" (click)="StartGame()">Start Game</button>
+    <button ion-button full class="quit-btn" (click)="StartGame()">Start Game</button>
     <ion-list>
         <button class="accordion" ion-button full>Leaderboard</button>
         <ion-item class="leaderboard" style="margin-bottom: 5%;">
@@ -77,7 +77,7 @@
                         </ion-avatar>
                     </ion-col>
                     <ion-col>
-                        <ion-row class="status">00:22:10</ion-row>
+                        <ion-row class="status">{{currentActivityTime}}</ion-row>
 
                         <ion-row class="status">
                             <circle-progress [percent]="90" [radius]="50" [subtitle]="Run" [title]="Run" [outerStrokeWidth]="16" [innerStrokeWidth]="0" [outerStrokeColor]="'#f4f4f4'" [animation]="true" [animationDuration]="3000"></circle-progress>
