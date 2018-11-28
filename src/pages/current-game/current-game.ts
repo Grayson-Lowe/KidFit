@@ -268,7 +268,6 @@ export class CurrentGamePage {
 
 
   refreshView() {
-    console.log("REFRESHED");
     this.getUsername().then(usernamedata => {
       this.getUserToken().then(usertokendata => {
         this.getGameID().then(gameIDdata => {
@@ -295,11 +294,9 @@ export class CurrentGamePage {
                 this.gameReadyToPlay = false;
                 this.gameInProgress = false;
                 this.gameOver = true;
-                this.navCtrl.push('ScoreBoardPage', { playerStatus: gameDetails['selfGameStatus'] });
 
                 // TODO
                 // Show total active minutes
-                //this.navCtrl.push('HotPotatoScoreBoardPage',{gameInstanceID:this.gameInstanceID})
               }
               if (gameDetails['gameStatus'] == 'gameInvited') {
                 this.gameInvited = true;
@@ -334,7 +331,7 @@ export class CurrentGamePage {
                 }
                 this.getActiveGameDetail(this.gameInstanceID).then(activeGameData => {
                   console.log("My Active Game: ", activeGameData)
-                  this.mysteps = activeGameData['currentSteps'] - activeGameData['startSteps']
+                  this.mysteps = activeGameData['currentSteps'] - activeGameData['startSteps'];
 
                   if (activeGameData['error']) {
                     this.navCtrl.push('InvalidLoginPage', { error: JSON.stringify(activeGameData) });
@@ -351,13 +348,15 @@ export class CurrentGamePage {
                       this.gameReadyToPlay = false;
                       this.gameOver = true;
                       this.gameWonOrLost = activeGameData['playerStatus'];
-                      this.navCtrl.push('ScoreBoardPage', { playerStatus: activeGameData['playerStatus'] })
                     }
                     else if (activeGameData['type'] == 'gameInProgress') {
+                      console.log("REFRESHING");
                       this.currentActivityTime = activeGameData['currentActivityTime'];
                       this.startActivityTime = activeGameData['startActiveTime'];
                       this.endingActivityTime = activeGameData['endValue'];
                       this.timeRemaining = activeGameData['timeRemaining'];
+                      console.log(this.timeRemaining);
+                      this.mysteps = activeGameData['currentSteps'] - activeGameData['startSteps'];
                       if (!this.timer) {
                         this.initTimer();
                         this.startTimer();
@@ -429,6 +428,7 @@ export class CurrentGamePage {
       this.timer.secondsRemaining--;
       this.timer.displayTime = this.getSecondsAsDigitalClock(this.timer.secondsRemaining);
       if (this.timer.secondsRemaining > 0) {
+        console.log(this.timer.secondsRemaining % 375);
         if (this.timer.secondsRemaining % 375 == 0)
           this.zone.run(() => this.refreshView());
         this.timerTick();
