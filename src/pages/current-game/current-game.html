@@ -80,7 +80,8 @@
                         <ion-row class="status">{{currentActivityTime}}</ion-row>
 
                         <ion-row class="status">
-                            <circle-progress [percent]="90" [radius]="50" [subtitle]="Run" [title]="Run" [outerStrokeWidth]="16" [innerStrokeWidth]="0" [outerStrokeColor]="'#f4f4f4'" [animation]="true" [animationDuration]="3000"></circle-progress>
+
+                            <circle-progress [percent]="getPerc()" [radius]="50" [subtitle]="Run" [title]="Run" [outerStrokeWidth]="16" [innerStrokeWidth]="0" [outerStrokeColor]="'#f4f4f4'" [animation]="true" [animationDuration]="3000"></circle-progress>
                         </ion-row>
 
                         <ion-row class="status">{{mysteps}}</ion-row>

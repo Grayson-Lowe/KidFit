@@ -55,7 +55,6 @@ export class CurrentGamePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public httpClient: HttpClient, private zone: NgZone, public events: Events, private alertCtrl: AlertController) {
     this.gameInstanceID = this.navParams.get('gameInstanceID');
 
-
   }
 
 
@@ -401,6 +400,11 @@ export class CurrentGamePage {
     minutesString = (minutes < 10) ? '0' + minutes : minutes.toString();
     secondsString = (seconds < 10) ? '0' + seconds : seconds.toString();
     return hoursString + ':' + minutesString + ':' + secondsString;
+  }
+
+  getPerc() {
+   
+   return this.mysteps / 1000;
   }
 
   initTimer() {
