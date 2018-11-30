@@ -52,6 +52,7 @@ export class CurrentGamePage {
   timer: CountdownTimer;
   bgImage: any;
   selfName = "";
+  percentComplete=0;
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public httpClient: HttpClient, private zone: NgZone, public events: Events, private alertCtrl: AlertController) {
     this.gameInstanceID = this.navParams.get('gameInstanceID');
 
@@ -332,6 +333,8 @@ export class CurrentGamePage {
                 this.getActiveGameDetail(this.gameInstanceID).then(activeGameData => {
                   console.log("My Active Game: ", activeGameData)
                   this.mysteps = activeGameData['currentSteps'] - activeGameData['startSteps'];
+                  // findPerc();
+                  console.log("My Steps: ", this.mysteps);
 
                   if (activeGameData['error']) {
                     this.navCtrl.push('InvalidLoginPage', { error: JSON.stringify(activeGameData) });
@@ -357,6 +360,7 @@ export class CurrentGamePage {
                       this.timeRemaining = activeGameData['timeRemaining'];
                       console.log(this.timeRemaining);
                       this.mysteps = activeGameData['currentSteps'] - activeGameData['startSteps'];
+                      // findPerc();
                       if (!this.timer) {
                         this.initTimer();
                         this.startTimer();
@@ -428,8 +432,8 @@ export class CurrentGamePage {
       this.timer.secondsRemaining--;
       this.timer.displayTime = this.getSecondsAsDigitalClock(this.timer.secondsRemaining);
       if (this.timer.secondsRemaining > 0) {
-        console.log(this.timer.secondsRemaining % 375);
-        if (this.timer.secondsRemaining % 375 == 0)
+        console.log(this.timer.secondsRemaining % 35);
+        if (this.timer.secondsRemaining % 35 == 0)
           this.zone.run(() => this.refreshView());
         this.timerTick();
       } else {
@@ -451,5 +455,9 @@ export class CurrentGamePage {
   openNewGamePage() {
     this.navCtrl.push(NewGamePage);
   }
+  // findPerc(){
+  //   this.percentComplete = this.mysteps/1000;
+  //   return percentComplete;
+  // }
 
 }
